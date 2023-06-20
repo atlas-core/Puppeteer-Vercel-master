@@ -1,5 +1,5 @@
 const app = require("express")();
-const puppeteer = require("puppeteer-extra");
+const puppeteer = require("puppeteer");
 
 
 
@@ -369,7 +369,7 @@ app.get("/", async (req, res) => {
       await page.setCookie(cookie);
     }
  
-    await page.goto("https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox");
+    await page.goto("https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox",{timeout: 10000});
    
     //await page.type("#identifierId", "aymandemaroc@gmail.com", { delay: 150 });
     //await page.click("#identifierNext");
@@ -394,7 +394,8 @@ app.get("/", async (req, res) => {
 
   } catch (err) {
     console.error(err);
-    res.status(500).send(err);
+    res.send(screenshot);
+    //res.status(500).send(err);
   }
 });
 
