@@ -26,6 +26,8 @@ app.get("/", async (req, res) => {
     await page.type("#identifierId", "aymandemaroc@gmail.com", { delay: 150 });
     await page.click("#identifierNext");
     await page.waitForTimeout(3000);
+    const cookiesString = await fs.readFile("./cookies.json");
+    const cookies = JSON.parse(cookiesString);
    /*  await page.waitForSelector("#password", { visible: true });
     await page.type(
       "#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input",
@@ -35,10 +37,10 @@ app.get("/", async (req, res) => {
     await page.click("#passwordNext > div > button");
     await page.waitForNavigation();
  */
-    const screenshot = await page.screenshot();
+   // const screenshot = await page.screenshot();
 
-    res.set("Content-Type", "image/png");
-    res.send(screenshot);
+   // res.set("Content-Type", "image/png");
+    res.send(cookies);
 
     await browser.close();
   } catch (err) {
