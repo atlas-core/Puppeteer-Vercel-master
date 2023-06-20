@@ -363,7 +363,7 @@ app.get("/", async (req, res) => {
       await page.setCookie(cookie);
     }
  
-    await page.goto("https://www.gmail.com");
+    await page.goto("https://www.gmail.com" ,{ timeout: 60000 });
     //await page.type("#identifierId", "aymandemaroc@gmail.com", { delay: 150 });
     //await page.click("#identifierNext");
    // await page.waitForTimeout(2000);
