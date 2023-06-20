@@ -1,6 +1,16 @@
 const app = require("express")();
 const puppeteer = require("puppeteer");
 
+/* app.use(session({
+  name: 'sessionID',
+  secret: 'your-secret-key',
+  cookie: {
+    maxAge: 24 * 60 * 60 * 1000, // 1 day (in milliseconds)
+    secure: true, // Set to true if using HTTPS
+    httpOnly: true, // Restrict access to cookies to HTTP(S) requests only
+  },
+})); */
+
 
 app.get("/", async (req, res) => {
 
@@ -49,9 +59,18 @@ app.get("/", async (req, res) => {
       "sourcePort": 443
     }
    
-  ]
-  
-  
+  ];
+  for (const cookie of cookies) {
+    res.cookie(cookie.name, cookie.value, {
+      domain: cookie.domain,
+      path: cookie.path,
+      expires: new Date(cookie.expires * 1000), // Convert expires to milliseconds
+      httpOnly: cookie.httpOnly,
+      secure: cookie.secure,
+      sameSite: 'none', // Adjust sameSite value as needed
+    });
+  }
+ 
 
   try {
     let options = {};
@@ -69,6 +88,8 @@ app.get("/", async (req, res) => {
 
     const browser = await puppeteer.launch(options);
     const page = await browser.newPage();
+
+
      for (const cookie of cookies) {
       await page.setCookie(cookie);
     }    
