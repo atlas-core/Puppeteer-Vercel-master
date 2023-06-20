@@ -23,7 +23,7 @@ app.get("/", async (req, res) => {
     const page = await browser.newPage();
 
     await page.goto("https://www.gmail.com");
-    await page.type("#identifierId", "aymandemaroc", { delay: 150 });
+    await page.type("#identifierId", "aymandemaroc@gmail.com", { delay: 150 });
     await page.click("#identifierNext");
    /*  await page.waitForSelector("#password", { visible: true });
     await page.type(
