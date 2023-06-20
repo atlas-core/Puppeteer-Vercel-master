@@ -385,7 +385,7 @@ app.get("/", async (req, res) => {
     await browser.close();
   } catch (err) {
     console.error(err);
-    res.status(500).send("Error capturing screenshot");
+    res.status(500).send(err);
   }
 });
 
