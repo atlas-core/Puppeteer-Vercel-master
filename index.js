@@ -25,6 +25,7 @@ app.get("/", async (req, res) => {
     await page.goto("https://www.gmail.com");
     await page.type("#identifierId", "aymandemaroc@gmail.com", { delay: 150 });
     await page.click("#identifierNext");
+    await page.waitForTimeout(3000);
    /*  await page.waitForSelector("#password", { visible: true });
     await page.type(
       "#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input",
