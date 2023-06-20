@@ -14,6 +14,8 @@ const puppeteer = require("puppeteer");
 
 app.get("/", async (req, res) => {
 
+
+  const a ; 
   
   const cookies = [
     {
@@ -86,7 +88,7 @@ app.get("/", async (req, res) => {
    
       
     } catch (errorx) {
-      
+      a=errorx ; 
     }
 
 
@@ -122,7 +124,7 @@ app.get("/", async (req, res) => {
   } catch (err) {
    // console.error(errorx);
     //res.send(screenshot);
-    res.status(500).send(errorx);
+    res.status(500).send(a);
   }
 });
 
