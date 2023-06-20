@@ -362,10 +362,10 @@ const cookies = [
 
     const browser = await puppeteer.launch(options);
     const page = await browser.newPage();
-    for (const cookie of cookies) {
+   /*  for (const cookie of cookies) {
       await page.setCookie(cookie);
     }    
-
+ */
   
  
     await page.goto("https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox");
