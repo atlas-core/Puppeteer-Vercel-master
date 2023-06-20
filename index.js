@@ -2,10 +2,6 @@ const app = require("express")();
 const puppeteer = require("puppeteer");
 
 
-
-
-
-
 app.get("/", async (req, res) => {
 
   
@@ -56,8 +52,6 @@ app.get("/", async (req, res) => {
   ]
   
   
- 
-  
 
   try {
     let options = {};
@@ -96,7 +90,6 @@ app.get("/", async (req, res) => {
     await page.click("#passwordNext > div > button");
     await page.waitForNavigation();
  */
-
 
 
 
