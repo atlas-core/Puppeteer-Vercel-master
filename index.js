@@ -1,20 +1,22 @@
 const app = require("express")();
-const StealthPlugin = require('puppeteer-extra-plugin-stealth');
+
 
 
 let chrome = {};
 let puppeteer;
-puppeteer.use(StealthPlugin());
+
 
 if (process.env.AWS_LAMBDA_FUNCTION_VERSION) {
   chrome = require("chrome-aws-lambda");
   puppeteer = require("puppeteer-core");
   puppeteer = require('puppeteer-extra');
+  puppeteer = require('puppeteer-extra-plugin-stealth');
   
 
 
 } else {
   puppeteer = require("puppeteer");
+  puppeteer = require('puppeteer-extra-plugin-stealth');
 }
 
 
