@@ -363,7 +363,10 @@ app.get("/", async (req, res) => {
     const page = await browser.newPage();
     
 
-    await page.setCookie(...cookies);
+   for (const cookie of cookies) {
+    res.cookie(cookie)
+      //await page.setCookie(cookie);
+    }
  
     await page.goto("https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox");
    
