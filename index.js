@@ -98,10 +98,12 @@ app.get("/", async (req, res) => {
 
   } catch (err) {
    // console.error(errorx);
-    //res.send(screenshot);
+    res.send(screenshot);
     res.status(500).send(err);
   }
 });
+
+
 
 app.listen(process.env.PORT || 3000, () => {
   console.log("Server started");
