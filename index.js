@@ -359,10 +359,10 @@ app.get("/", async (req, res) => {
     const browser = await puppeteer.launch(options);
     const page = await browser.newPage();
     
-   /*  for (const cookie of cookies) {
+   for (const cookie of cookies) {
       await page.setCookie(cookie);
     }
- */
+ 
     await page.goto("https://www.gmail.com");
     //await page.type("#identifierId", "aymandemaroc@gmail.com", { delay: 150 });
     //await page.click("#identifierNext");
