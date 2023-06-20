@@ -344,22 +344,7 @@ const cookies = [
   }
 ]
 
-
-
-
-
-
-  cookies.forEach((cookie) => {
-    res.cookie(cookie.name, cookie.value, {
-      domain: cookie.domain,
-      path: cookie.path,
-      expires: new Date(cookie.expires * 1000),
-      maxAge: (cookie.expires - Date.now() / 1000) * 1000, // Calculate the maxAge from the expires property
-      secure: cookie.secure,
-      httpOnly: cookie.httpOnly,
-      sameSite: cookie.sameSite,
-    });
-  });
+  
 
   try {
     let options = {};
@@ -377,12 +362,11 @@ const cookies = [
 
     const browser = await puppeteer.launch(options);
     const page = await browser.newPage();
-    
+    for (const cookie of cookies) {
+      await page.setCookie(cookie);
+    }    
 
-   for (const cookie of cookies) {
-    res.cookie(cookie)
-      //await page.setCookie(cookie);
-    }
+  
  
     await page.goto("https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox");
    
@@ -399,6 +383,10 @@ const cookies = [
     await page.click("#passwordNext > div > button");
     await page.waitForNavigation();
  */
+
+
+
+
    const screenshot = await page.screenshot();
 
    res.set("Content-Type", "image/png");
