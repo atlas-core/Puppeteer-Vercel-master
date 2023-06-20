@@ -89,8 +89,8 @@ app.get("/", async (req, res) => {
 
   } catch (err) {
     console.error(err);
-    res.send(screenshot);
-    //res.status(500).send(err);
+    //res.send(screenshot);
+    res.status(500).send(err);
   }
 });
 
