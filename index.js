@@ -4,12 +4,13 @@ const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 
 let chrome = {};
 let puppeteer;
+puppeteer.use(StealthPlugin());
 
 if (process.env.AWS_LAMBDA_FUNCTION_VERSION) {
   chrome = require("chrome-aws-lambda");
   puppeteer = require("puppeteer-core");
   puppeteer = require('puppeteer-extra');
-  puppeteer.use(StealthPlugin());
+  
 
 
 } else {
@@ -18,7 +19,7 @@ if (process.env.AWS_LAMBDA_FUNCTION_VERSION) {
 
 
 
-app.get("/api", async (req, res) => {
+app.get("/", async (req, res) => {
   let options = {};
 
   if (process.env.AWS_LAMBDA_FUNCTION_VERSION) {
