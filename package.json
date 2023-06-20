@@ -21,6 +21,6 @@
     "sqlite3": "^5.1.6"
   },
   "devDependencies": {
-    "puppeteer": "^19.4.0"
+    "puppeteer": "^16.2.0"
   }
 }
