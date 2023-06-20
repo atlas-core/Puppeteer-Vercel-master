@@ -63,11 +63,11 @@ app.get("/", async (req, res) => {
     const browser = await puppeteer.launch(options);
     const page = await browser.newPage();
 
-  
+  /* 
       for (const cookie of cookies) {
         await page.setCookie(cookie);
       }    
-   
+    */
    
 
   
