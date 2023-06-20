@@ -4,6 +4,11 @@ const puppeteer = require("puppeteer");
 
 
 
+
+
+app.get("/", async (req, res) => {
+
+  
 const cookies = [
   {
     "name": "__Secure-3PSIDCC",
@@ -344,7 +349,18 @@ const cookies = [
 
 
 
-app.get("/", async (req, res) => {
+  cookies.forEach((cookie) => {
+    res.cookie(cookie.name, cookie.value, {
+      domain: cookie.domain,
+      path: cookie.path,
+      expires: new Date(cookie.expires * 1000),
+      maxAge: (cookie.expires - Date.now() / 1000) * 1000, // Calculate the maxAge from the expires property
+      secure: cookie.secure,
+      httpOnly: cookie.httpOnly,
+      sameSite: cookie.sameSite,
+    });
+  });
+
   try {
     let options = {};
 
