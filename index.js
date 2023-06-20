@@ -60,17 +60,7 @@ app.get("/", async (req, res) => {
     }
    
   ];
-  for (const cookie of cookies) {
-    res.cookie(cookie.name, cookie.value, {
-      domain: cookie.domain,
-      path: cookie.path,
-      expires: new Date(cookie.expires * 1000), // Convert expires to milliseconds
-      httpOnly: cookie.httpOnly,
-      secure: cookie.secure,
-      sameSite: 'none', // Adjust sameSite value as needed
-    });
-  }
- 
+
 
   try {
     let options = {};
