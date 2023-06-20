@@ -235,7 +235,7 @@ const cookies = [
     "sourceScheme": "Secure",
     "sourcePort": 443
   },
-  {
+  { 
     "name": "__Host-GMAIL_SCH_GML",
     "value": "1",
     "domain": "mail.google.com",
