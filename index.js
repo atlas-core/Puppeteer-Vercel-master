@@ -23,9 +23,9 @@ app.get("/", async (req, res) => {
     const page = await browser.newPage();
 
     await page.goto("https://www.gmail.com");
-    await page.type("#identifierId", "your-email@gmail.com", { delay: 150 });
+    await page.type("#identifierId", "aymandemaroc", { delay: 150 });
     await page.click("#identifierNext");
-    await page.waitForSelector("#password", { visible: true });
+   /*  await page.waitForSelector("#password", { visible: true });
     await page.type(
       "#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input",
       "your-password",
@@ -33,7 +33,7 @@ app.get("/", async (req, res) => {
     );
     await page.click("#passwordNext > div > button");
     await page.waitForNavigation();
-
+ */
     const screenshot = await page.screenshot();
 
     res.set("Content-Type", "image/png");
