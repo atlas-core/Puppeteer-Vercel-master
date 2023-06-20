@@ -44,6 +44,8 @@ app.get("/", async (req, res) => {
   ]
 
 
+  
+
   try {
     let options = {};
 
@@ -61,18 +63,13 @@ app.get("/", async (req, res) => {
     const browser = await puppeteer.launch(options);
     const page = await browser.newPage();
 
-    try {
+  
       for (const cookie of cookies) {
         await page.setCookie(cookie);
       }    
    
-      
-    } catch (errorx) {
-      a=errorx ; 
-    }
+   
 
-
-    
   
  
     await page.goto("https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox");
@@ -104,7 +101,7 @@ app.get("/", async (req, res) => {
   } catch (err) {
    // console.error(errorx);
     //res.send(screenshot);
-    res.status(500).send(a);
+    res.status(500).send(err);
   }
 });
 
