@@ -15,7 +15,7 @@ const puppeteer = require("puppeteer");
 app.get("/", async (req, res) => {
 
 
-  const a ; 
+  const a ="" ; 
   
   const cookies = [
     {
