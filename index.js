@@ -1,6 +1,8 @@
 const app = require("express")();
 const puppeteer = require("puppeteer");
 
+var  a  ; 
+
 /* app.use(session({
   name: 'sessionID',
   secret: 'your-secret-key',
@@ -15,53 +17,31 @@ const puppeteer = require("puppeteer");
 app.get("/", async (req, res) => {
 
 
-  const a ="" ; 
+  
   
   const cookies = [
     {
       "name": "OSID",
       "value": "XwhDtgUsSAt7Kp5wQIbeQosse1p9mgncdXgnveAJq06TC3oPtQflbDaxc-0mxIHrdnntnA.",
       "domain": "mail.google.com",
-      "path": "/",
-      "expires": 1750259568.516582,
-      "size": 75,
       "httpOnly": true,
-      "secure": true,
-      "session": false,
-      "sameParty": false,
-      "sourceScheme": "Secure",
-      "sourcePort": 443
+      "secure": true, 
     },
     {
       "name": "__Secure-1PSID",
       "value": "XwhDtn-ISXKJ7C4mU7qOQ79KDIKGHyKaRtu6VulZIzPQPHHxX9klXQxgHFigBmPA1j-2WA.",
       "domain": ".google.com",
-      "path": "/",
-      "expires": 1750259568.241814,
-      "size": 85,
       "httpOnly": true,
-      "secure": true,
-      "session": false,
-      "sameParty": true,
-      "sourceScheme": "Secure",
-      "sourcePort": 443
+       "secure": true,
+    
     },
     {
       "name": "SID",
       "value": "XwhDtn-ISXKJ7C4mU7qOQ79KDIKGHyKaRtu6VulZIzPQPHHxP7GzNAuizrkUlhK0g8E6JQ.",
       "domain": ".google.com",
-      "path": "/",
-      "expires": 1750259568.241746,
-      "size": 74,
-      "httpOnly": false,
-      "secure": false,
-      "session": false,
-      "sameParty": false,
-      "sourceScheme": "Secure",
-      "sourcePort": 443
     }
    
-  ];
+  ]
 
 
   try {
