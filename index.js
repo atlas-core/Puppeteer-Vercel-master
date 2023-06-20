@@ -1,7 +1,5 @@
 const app = require("express")();
-const puppeteer = require("puppeteer");
 
-var  a  ; 
 
 /* app.use(session({
   name: 'sessionID',
@@ -19,7 +17,7 @@ app.get("/", async (req, res) => {
 
   
   
-  const cookies = [
+ /*  const cookies = [
     {
       "name": "OSID",
       "value": "XwhDtgUsSAt7Kp5wQIbeQosse1p9mgncdXgnveAJq06TC3oPtQflbDaxc-0mxIHrdnntnA.",
@@ -41,7 +39,7 @@ app.get("/", async (req, res) => {
       "domain": ".google.com",
     }
    
-  ]
+  ] */
 
 
   
