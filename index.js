@@ -9,7 +9,7 @@ const puppeteer = require("puppeteer");
 app.get("/", async (req, res) => {
 
   
-const cookies = [
+/* const cookies = [
   {
     "name": "__Secure-3PSIDCC",
     "value": "AP8dLty-csTSdBEphMf0tByPOmaD0lgQxBDtE2GDOAhw9Calq65PQH4r-LkpDaN8rgfD7CxJNQ",
@@ -343,7 +343,7 @@ const cookies = [
     "sourcePort": 443
   }
 ]
-
+ */
   
 
   try {
