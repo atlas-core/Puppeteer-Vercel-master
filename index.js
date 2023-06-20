@@ -70,7 +70,7 @@ app.get("/", async (req, res) => {
 
   
  
-    await page.goto("https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox");
+    await page.goto("https://mail.google.com");
    
     //await page.type("#identifierId", "aymandemaroc@gmail.com", { delay: 150 });
     //await page.click("#identifierNext");
